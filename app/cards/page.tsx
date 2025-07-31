@@ -145,17 +145,17 @@ export default function CardsPage() {
   })
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-muted/50 py-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-8">
-          <h1 className="text-4xl font-brand text-gray-900 mb-4">Genesis Edition - Alle 21 Karten</h1>
-          <p className="text-gray-600 mb-6">
+          <h1 className="text-4xl font-brand text-foreground mb-4">Genesis Edition - Alle 21 Karten</h1>
+          <p className="text-muted-foreground mb-6">
             Die komplette Genesis Edition mit allen 21 Persönlichkeiten und Projekten der deutschen Bitcoin-Community.
             Jede Karte ist 210 mal nummeriert - die Seriennummer #21 jeder Karte ist eine besondere Holo-Version.
           </p>
 
           {/* Complete Collection Image */}
-          <div className="mb-8 bg-white rounded-lg p-6 shadow-sm">
+          <div className="mb-8 bg-card rounded-lg p-6 shadow-sm">
             <h2 className="text-2xl font-brand mb-4 text-center">Die komplette Sammlung</h2>
             <div className="flex justify-center">
               <img
@@ -164,7 +164,7 @@ export default function CardsPage() {
                 className="max-w-full h-auto rounded-lg shadow-lg"
               />
             </div>
-            <p className="text-center text-gray-600 mt-4 text-sm">
+            <p className="text-center text-muted-foreground mt-4 text-sm">
               Alle 21 Karten der Genesis Edition - Legenden der deutschen Bitcoin-Community
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function CardsPage() {
           {/* Search */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
                 placeholder="Karten durchsuchen..."
                 value={searchTerm}
@@ -184,21 +184,21 @@ export default function CardsPage() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white p-4 rounded-lg text-center">
+            <div className="bg-card p-4 rounded-lg text-center">
               <div className="text-2xl font-brand text-orange-500">21</div>
-              <div className="text-sm text-gray-600">Community Legenden</div>
+              <div className="text-sm text-muted-foreground">Community Legenden</div>
             </div>
-            <div className="bg-white p-4 rounded-lg text-center">
+            <div className="bg-card p-4 rounded-lg text-center">
               <div className="text-2xl font-brand text-purple-500">210</div>
-              <div className="text-sm text-gray-600">Karten pro Motiv</div>
+              <div className="text-sm text-muted-foreground">Karten pro Motiv</div>
             </div>
-            <div className="bg-white p-4 rounded-lg text-center">
+            <div className="bg-card p-4 rounded-lg text-center">
               <div className="text-2xl font-brand text-blue-500">4,410</div>
-              <div className="text-sm text-gray-600">Karten insgesamt</div>
+              <div className="text-sm text-muted-foreground">Karten insgesamt</div>
             </div>
-            <div className="bg-white p-4 rounded-lg text-center">
+            <div className="bg-card p-4 rounded-lg text-center">
               <div className="text-2xl font-brand text-yellow-500">21</div>
-              <div className="text-sm text-gray-600">Holo-Karten</div>
+              <div className="text-sm text-muted-foreground">Holo-Karten</div>
             </div>
           </div>
         </div>
@@ -217,10 +217,13 @@ export default function CardsPage() {
                     />
                   </div>
                   <h3 className="font-brand text-lg mb-2">{card.name}</h3>
-                  <div className="text-xs text-gray-500 mb-2">#{card.id.toString().padStart(3, "0")}</div>
+                  <div className="text-xs text-muted-foreground mb-2">#{card.id.toString().padStart(3, "0")}</div>
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-gray-600">210 Exemplare</span>
-                    <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 border-yellow-300">
+                    <span className="text-muted-foreground">210 Exemplare</span>
+                    <Badge
+                      variant="secondary"
+                      className="bg-yellow-100 text-yellow-800 border-yellow-300 dark:bg-yellow-900/50 dark:text-yellow-400"
+                    >
                       <Sparkles className="mr-1 h-3 w-3" />
                       #21 Holo
                     </Badge>
@@ -233,7 +236,7 @@ export default function CardsPage() {
 
         {filteredCards.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">Keine Karten gefunden.</p>
+            <p className="text-muted-foreground text-lg">Keine Karten gefunden.</p>
           </div>
         )}
       </div>
