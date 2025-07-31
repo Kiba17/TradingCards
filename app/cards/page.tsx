@@ -106,7 +106,7 @@ export default function CardsPage() {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Genesis Edition Karten</h1>
+          <h1 className="text-4xl font-brand text-gray-900 mb-4">Genesis Edition Karten</h1>
           <p className="text-gray-600 mb-6">
             Entdecke alle 21 einzigartigen Motive der Genesis Edition. Jede Karte ist 210 mal verfügbar.
           </p>
@@ -151,7 +151,7 @@ export default function CardsPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{card.name}</h3>
+                  <h3 className="font-brand text-lg mb-2">{card.name}</h3>
                   <Badge
                     variant="secondary"
                     className={`mb-3 ${

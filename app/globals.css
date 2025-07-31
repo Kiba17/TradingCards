@@ -8,6 +8,14 @@
   }
 }
 
+@font-face {
+  font-family: "TheBoldFont";
+  src: url("/fonts/THEBOLDFONT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -87,4 +95,15 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom font utility classes */
+.font-bold-custom {
+  font-family: "TheBoldFont", serif;
+}
+
+.text-brand {
+  font-family: "TheBoldFont", serif;
+  font-weight: normal;
+  letter-spacing: -0.02em;
 }

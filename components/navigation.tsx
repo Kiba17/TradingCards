@@ -18,9 +18,9 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">21</span>
+              <span className="text-white font-brand text-sm">21</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">
+            <span className="text-xl font-brand text-gray-900">
               Einund<span className="text-orange-500">zwanzig</span>
             </span>
           </Link>
@@ -77,7 +77,7 @@ export default function Navigation() {
               </DropdownMenu>
             ) : (
               <Link href="/login">
-                <Button className="bg-orange-500 hover:bg-orange-600">
+                <Button className="bg-orange-500 hover:bg-orange-600 font-brand">
                   <Zap className="mr-2 h-4 w-4" />
                   Login
                 </Button>
@@ -140,7 +140,7 @@ export default function Navigation() {
                 </>
               ) : (
                 <Link href="/login" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="bg-orange-500 hover:bg-orange-600 w-full">
+                  <Button className="bg-orange-500 hover:bg-orange-600 w-full font-brand">
                     <Zap className="mr-2 h-4 w-4" />
                     Login
                   </Button>

@@ -45,7 +45,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-7xl font-brand text-gray-900 mb-6">
             Einund<span className="text-orange-500">zwanzig</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -54,7 +54,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/cards">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-brand">
                 <Trophy className="mr-2 h-5 w-5" />
                 Karten entdecken
               </Button>
@@ -63,7 +63,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent"
+                className="border-orange-500 text-orange-500 hover:bg-orange-50 bg-transparent font-brand"
               >
                 <Zap className="mr-2 h-5 w-5" />
                 Lightning Login
@@ -78,15 +78,15 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6">
-              <div className="text-4xl font-bold text-orange-500 mb-2">21</div>
+              <div className="text-4xl font-brand text-orange-500 mb-2">21</div>
               <div className="text-gray-600">Einzigartige Motive</div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-bold text-orange-500 mb-2">210</div>
+              <div className="text-4xl font-brand text-orange-500 mb-2">210</div>
               <div className="text-gray-600">Karten pro Motiv</div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-bold text-orange-500 mb-2">4,410</div>
+              <div className="text-4xl font-brand text-orange-500 mb-2">4,410</div>
               <div className="text-gray-600">Karten insgesamt</div>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function HomePage() {
       {/* Featured Cards */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Genesis Edition Highlights</h2>
+          <h2 className="text-3xl font-brand text-center mb-12">Genesis Edition Highlights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredCards.map((card) => (
               <Card key={card.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -108,7 +108,7 @@ export default function HomePage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{card.name}</h3>
+                  <h3 className="font-brand text-lg mb-2">{card.name}</h3>
                   <Badge
                     variant="secondary"
                     className={`mb-3 ${
@@ -132,7 +132,7 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-8">
             <Link href="/cards">
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="font-brand bg-transparent">
                 Alle Karten anzeigen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -144,13 +144,13 @@ export default function HomePage() {
       {/* Features */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Warum Einundzwanzig?</h2>
+          <h2 className="text-3xl font-brand text-center mb-12">Warum Einundzwanzig?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="h-8 w-8 text-orange-500" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Lightning Login</h3>
+              <h3 className="text-xl font-brand mb-3">Lightning Login</h3>
               <p className="text-gray-600">
                 Sichere Anmeldung über das Lightning Network. Keine E-Mail, keine Passwörter - einfach und sicher.
               </p>
@@ -159,7 +159,7 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-orange-500" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Community Trading</h3>
+              <h3 className="text-xl font-brand mb-3">Community Trading</h3>
               <p className="text-gray-600">
                 Finde andere Sammler, tausche Karten und baue deine perfekte Sammlung auf.
               </p>
@@ -168,7 +168,7 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Trophy className="h-8 w-8 text-orange-500" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Echte Sammlerstücke</h3>
+              <h3 className="text-xl font-brand mb-3">Echte Sammlerstücke</h3>
               <p className="text-gray-600">
                 Jede Karte ist physisch vorhanden und nummeriert. Authentizität garantiert.
               </p>

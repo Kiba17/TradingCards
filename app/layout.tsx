@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Einundzwanzig - Bitcoin Sammelkarten",
   description:
     "Das offizielle Sammelkartenspiel der Bitcoin Community. 21 einzigartige Motive, jeweils 210 mal nummeriert.",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -20,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
+      <head>
+        <link rel="preload" href="/fonts/THEBOLDFONT.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+      </head>
       <body className={inter.className}>
         <Navigation />
         {children}
