@@ -1,41 +1,40 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Zap, Users, Trophy, ArrowRight } from "lucide-react"
+import { Zap, Users, Trophy, ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
+  // Erste 5 Karten als Featured Cards
   const featuredCards = [
     {
       id: 1,
-      name: "Satoshi Genesis",
-      rarity: "Legendary",
+      name: "Satoshi",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 5,
       total: 210,
     },
     {
-      id: 2,
-      name: "Lightning Strike",
-      rarity: "Epic",
+      id: 7,
+      name: "Blocktrainer",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 12,
       total: 210,
     },
     {
-      id: 3,
-      name: "HODL Master",
-      rarity: "Rare",
+      id: 12,
+      name: "Christian Decker",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 23,
       total: 210,
     },
     {
-      id: 4,
-      name: "Mining Rig",
-      rarity: "Common",
+      id: 19,
+      name: "Zitadelle",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 45,
+      total: 210,
+    },
+    {
+      id: 20,
+      name: "Gigi",
+      image: "/placeholder.svg?height=300&width=200",
       total: 210,
     },
   ]
@@ -49,14 +48,15 @@ export default function HomePage() {
             Einund<span className="text-orange-500">zwanzig</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Das offizielle Sammelkartenspiel der Bitcoin Community. 21 einzigartige Motive, jeweils 210 mal nummeriert.
-            Sammle, tausche und werde Teil der Community.
+            Das offizielle Sammelkartenspiel der deutschen Bitcoin Community. 21 einzigartige Karten mit den Legenden
+            unserer Community, jeweils 210 mal nummeriert. Die Seriennummer #21 jeder Karte ist eine besondere
+            Holo-Version.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/cards">
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-brand">
                 <Trophy className="mr-2 h-5 w-5" />
-                Karten entdecken
+                Alle 21 Legenden entdecken
               </Button>
             </Link>
             <Link href="/login">
@@ -73,35 +73,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Complete Collection Preview */}
       <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-brand mb-6">Die komplette Genesis Edition</h2>
+          <div className="bg-gradient-to-r from-orange-100 to-purple-100 rounded-2xl p-8 mb-8">
+            <img
+              src="/images/einundzwanzig-complete-collection.png"
+              alt="Alle 21 Einundzwanzig Karten"
+              className="max-w-full h-auto rounded-lg shadow-xl mx-auto"
+            />
+          </div>
+          <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
+            Von Satoshi bis Gigi - alle 21 Persönlichkeiten und Projekte, die die deutsche Bitcoin-Community geprägt
+            haben. Jede Karte ist 210 mal nummeriert, wobei die Seriennummer #21 als besondere Holo-Version glänzt.
+          </p>
+          <Link href="/cards">
+            <Button size="lg" variant="outline" className="font-brand bg-transparent">
+              <Sparkles className="mr-2 h-5 w-5" />
+              Komplette Sammlung ansehen
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div className="p-6">
               <div className="text-4xl font-brand text-orange-500 mb-2">21</div>
-              <div className="text-gray-600">Einzigartige Motive</div>
+              <div className="text-gray-600">Community Legenden</div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-brand text-orange-500 mb-2">210</div>
+              <div className="text-4xl font-brand text-purple-500 mb-2">210</div>
               <div className="text-gray-600">Karten pro Motiv</div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-brand text-orange-500 mb-2">4,410</div>
+              <div className="text-4xl font-brand text-blue-500 mb-2">4,410</div>
               <div className="text-gray-600">Karten insgesamt</div>
+            </div>
+            <div className="p-6">
+              <div className="text-4xl font-brand text-yellow-500 mb-2">21</div>
+              <div className="text-gray-600">Holo-Karten</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Cards */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-brand text-center mb-12">Genesis Edition Highlights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-3xl font-brand text-center mb-12">Community Highlights</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {featuredCards.map((card) => (
               <Card key={card.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-4">
-                  <div className="aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+                  <div className="aspect-[3/4] mb-4 overflow-hidden rounded-lg bg-gradient-to-br from-yellow-200 via-orange-200 to-purple-200">
                     <img
                       src={card.image || "/placeholder.svg"}
                       alt={card.name}
@@ -109,23 +137,12 @@ export default function HomePage() {
                     />
                   </div>
                   <h3 className="font-brand text-lg mb-2">{card.name}</h3>
-                  <Badge
-                    variant="secondary"
-                    className={`mb-3 ${
-                      card.rarity === "Legendary"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : card.rarity === "Epic"
-                          ? "bg-purple-100 text-purple-800"
-                          : card.rarity === "Rare"
-                            ? "bg-blue-100 text-blue-800"
-                            : "bg-gray-100 text-gray-800"
-                    }`}
-                  >
-                    {card.rarity}
+                  <div className="text-xs text-gray-500 mb-2">#{card.id.toString().padStart(3, "0")}</div>
+                  <div className="text-sm text-gray-600 mb-2">210 Exemplare</div>
+                  <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 border-yellow-300">
+                    <Sparkles className="mr-1 h-3 w-3" />
+                    #21 Holo
                   </Badge>
-                  <div className="text-sm text-gray-600">
-                    {card.owned}/{card.total} im Umlauf
-                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -133,7 +150,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link href="/cards">
               <Button variant="outline" size="lg" className="font-brand bg-transparent">
-                Alle Karten anzeigen
+                Alle Community Legenden anzeigen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -161,16 +178,16 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-brand mb-3">Community Trading</h3>
               <p className="text-gray-600">
-                Finde andere Sammler, tausche Karten und baue deine perfekte Sammlung auf.
+                Finde andere Sammler, tausche Karten und baue deine perfekte Sammlung der Bitcoin-Legenden auf.
               </p>
             </div>
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Trophy className="h-8 w-8 text-orange-500" />
+                <Sparkles className="h-8 w-8 text-orange-500" />
               </div>
-              <h3 className="text-xl font-brand mb-3">Echte Sammlerstücke</h3>
+              <h3 className="text-xl font-brand mb-3">Holo-Sammlerstücke</h3>
               <p className="text-gray-600">
-                Jede Karte ist physisch vorhanden und nummeriert. Authentizität garantiert.
+                Jede Karte #21 ist eine besondere holographische Version - die ultimativen Sammlerstücke für echte Fans.
               </p>
             </div>
           </div>

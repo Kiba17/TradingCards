@@ -4,114 +4,172 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Search, Filter } from "lucide-react"
+import { Search, Sparkles } from "lucide-react"
 import Link from "next/link"
 
 export default function CardsPage() {
   const [searchTerm, setSearchTerm] = useState("")
-  const [rarityFilter, setRarityFilter] = useState("all")
 
+  // Die echten 21 Karten der deutschen Bitcoin-Community
   const cards = [
     {
       id: 1,
-      name: "Satoshi Genesis",
-      rarity: "Legendary",
+      name: "Satoshi",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 5,
       total: 210,
-      price: "0.021 BTC",
     },
     {
       id: 2,
-      name: "Lightning Strike",
-      rarity: "Epic",
+      name: "Niko Jilch",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 12,
       total: 210,
-      price: "0.015 BTC",
     },
     {
       id: 3,
-      name: "HODL Master",
-      rarity: "Rare",
+      name: "Der Pleb",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 23,
       total: 210,
-      price: "0.008 BTC",
     },
     {
       id: 4,
-      name: "Mining Rig",
-      rarity: "Common",
+      name: "Einundzwanzig Stammtisch",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 45,
       total: 210,
-      price: "0.003 BTC",
     },
     {
       id: 5,
-      name: "Block Explorer",
-      rarity: "Rare",
+      name: "Nodesignal",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 18,
       total: 210,
-      price: "0.007 BTC",
     },
     {
       id: 6,
-      name: "Wallet Guardian",
-      rarity: "Epic",
+      name: "Fab",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 9,
       total: 210,
-      price: "0.012 BTC",
     },
     {
       id: 7,
-      name: "Node Runner",
-      rarity: "Common",
+      name: "Blocktrainer",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 67,
       total: 210,
-      price: "0.004 BTC",
     },
     {
       id: 8,
-      name: "Hash Power",
-      rarity: "Rare",
+      name: "Seedor Chris",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 31,
       total: 210,
-      price: "0.009 BTC",
     },
     {
       id: 9,
-      name: "Proof of Work",
-      rarity: "Epic",
+      name: "Plebrap",
       image: "/placeholder.svg?height=300&width=200",
-      owned: 7,
       total: 210,
-      price: "0.016 BTC",
+    },
+    {
+      id: 10,
+      name: "Bitcoin Hotel",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 11,
+      name: "Pioniere Münzweg",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 12,
+      name: "Christian Decker",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 13,
+      name: "Markus Turm",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 14,
+      name: "Jonas Nick",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 15,
+      name: "Netdiver",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 16,
+      name: "Dennis",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 17,
+      name: "Paddepadde",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 18,
+      name: "Maurice-Effekt",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 19,
+      name: "Zitadelle",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 20,
+      name: "Gigi",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
+    },
+    {
+      id: 21,
+      name: "Einundzwanzig Magazin",
+      image: "/placeholder.svg?height=300&width=200",
+      total: 210,
     },
   ]
 
   const filteredCards = cards.filter((card) => {
-    const matchesSearch = card.name.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesRarity = rarityFilter === "all" || card.rarity.toLowerCase() === rarityFilter
-    return matchesSearch && matchesRarity
+    return card.name.toLowerCase().includes(searchTerm.toLowerCase())
   })
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-8">
-          <h1 className="text-4xl font-brand text-gray-900 mb-4">Genesis Edition Karten</h1>
+          <h1 className="text-4xl font-brand text-gray-900 mb-4">Genesis Edition - Alle 21 Karten</h1>
           <p className="text-gray-600 mb-6">
-            Entdecke alle 21 einzigartigen Motive der Genesis Edition. Jede Karte ist 210 mal verfügbar.
+            Die komplette Genesis Edition mit allen 21 Persönlichkeiten und Projekten der deutschen Bitcoin-Community.
+            Jede Karte ist 210 mal nummeriert - die Seriennummer #21 jeder Karte ist eine besondere Holo-Version.
           </p>
 
-          {/* Filters */}
+          {/* Complete Collection Image */}
+          <div className="mb-8 bg-white rounded-lg p-6 shadow-sm">
+            <h2 className="text-2xl font-brand mb-4 text-center">Die komplette Sammlung</h2>
+            <div className="flex justify-center">
+              <img
+                src="/images/einundzwanzig-complete-collection.png"
+                alt="Alle 21 Einundzwanzig Karten der Genesis Edition"
+                className="max-w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <p className="text-center text-gray-600 mt-4 text-sm">
+              Alle 21 Karten der Genesis Edition - Legenden der deutschen Bitcoin-Community
+            </p>
+          </div>
+
+          {/* Search */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
@@ -122,29 +180,36 @@ export default function CardsPage() {
                 className="pl-10"
               />
             </div>
-            <Select value={rarityFilter} onValueChange={setRarityFilter}>
-              <SelectTrigger className="w-full sm:w-48">
-                <Filter className="mr-2 h-4 w-4" />
-                <SelectValue placeholder="Seltenheit" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle Seltenheiten</SelectItem>
-                <SelectItem value="legendary">Legendary</SelectItem>
-                <SelectItem value="epic">Epic</SelectItem>
-                <SelectItem value="rare">Rare</SelectItem>
-                <SelectItem value="common">Common</SelectItem>
-              </SelectContent>
-            </Select>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="bg-white p-4 rounded-lg text-center">
+              <div className="text-2xl font-brand text-orange-500">21</div>
+              <div className="text-sm text-gray-600">Community Legenden</div>
+            </div>
+            <div className="bg-white p-4 rounded-lg text-center">
+              <div className="text-2xl font-brand text-purple-500">210</div>
+              <div className="text-sm text-gray-600">Karten pro Motiv</div>
+            </div>
+            <div className="bg-white p-4 rounded-lg text-center">
+              <div className="text-2xl font-brand text-blue-500">4,410</div>
+              <div className="text-sm text-gray-600">Karten insgesamt</div>
+            </div>
+            <div className="bg-white p-4 rounded-lg text-center">
+              <div className="text-2xl font-brand text-yellow-500">21</div>
+              <div className="text-sm text-gray-600">Holo-Karten</div>
+            </div>
           </div>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
           {filteredCards.map((card) => (
             <Link key={card.id} href={`/cards/${card.id}`}>
               <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                 <CardContent className="p-4">
-                  <div className="aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+                  <div className="aspect-[3/4] mb-4 overflow-hidden rounded-lg bg-gradient-to-br from-yellow-200 via-orange-200 to-purple-200">
                     <img
                       src={card.image || "/placeholder.svg"}
                       alt={card.name}
@@ -152,25 +217,13 @@ export default function CardsPage() {
                     />
                   </div>
                   <h3 className="font-brand text-lg mb-2">{card.name}</h3>
-                  <Badge
-                    variant="secondary"
-                    className={`mb-3 ${
-                      card.rarity === "Legendary"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : card.rarity === "Epic"
-                          ? "bg-purple-100 text-purple-800"
-                          : card.rarity === "Rare"
-                            ? "bg-blue-100 text-blue-800"
-                            : "bg-gray-100 text-gray-800"
-                    }`}
-                  >
-                    {card.rarity}
-                  </Badge>
+                  <div className="text-xs text-gray-500 mb-2">#{card.id.toString().padStart(3, "0")}</div>
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-gray-600">
-                      {card.owned}/{card.total} im Umlauf
-                    </span>
-                    <span className="font-semibold text-orange-600">{card.price}</span>
+                    <span className="text-gray-600">210 Exemplare</span>
+                    <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 border-yellow-300">
+                      <Sparkles className="mr-1 h-3 w-3" />
+                      #21 Holo
+                    </Badge>
                   </div>
                 </CardContent>
               </Card>
